@@ -6,13 +6,20 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#">Recipes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Shopping list</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="onNavigateRecipes()">Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="onNavigateShoppingList()"
+            >Shopping list</a
+          >
+        </li>
       </ul>
       <ul class="nav navbar-nav">
         <li class="dropdown">
           <a class="nav-link dropdown-toggle" href="#">Manage</a>
-          <ul class="dropdown-menu">
+          <!-- <ul class="dropdown-menu show" appDropdown> -->
+          <ul class="dropdown-menu" appDropdown>
             <li><a class="dropdown-item" href="#">Save Data</a></li>
             <li><a class="dropdown-item" href="#">Fetch Data</a></li>
           </ul>
