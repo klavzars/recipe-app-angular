@@ -7,10 +7,18 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onNavigateRecipes()">Recipes</a>
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/recipes']"
+            >Recipes</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onNavigateShoppingList()"
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/shopping-list']"
             >Shopping list</a
           >
         </li>

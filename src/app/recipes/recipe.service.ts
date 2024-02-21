@@ -32,6 +32,10 @@ export class RecipeService {
     return this.recipes.slice(); // Return a copy to prevent access
   }
 
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
   selectedRecipe: Recipe;
 
   onRecipeSelection(recipe: Recipe) {
