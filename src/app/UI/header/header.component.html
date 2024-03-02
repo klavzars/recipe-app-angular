@@ -23,13 +23,17 @@
           >
         </li>
       </ul>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav show">
         <li class="dropdown">
           <a class="nav-link dropdown-toggle" href="#">Manage</a>
           <!-- <ul class="dropdown-menu show" appDropdown> -->
-          <ul class="dropdown-menu" appDropdown>
-            <li><a class="dropdown-item" href="#">Save Data</a></li>
-            <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+          <ul class="dropdown-menu show" appDropdown>
+            <li>
+              <a class="dropdown-item" (click)="onSaveData()">Save Data</a>
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onFetchData()">Fetch Data</a>
+            </li>
           </ul>
         </li>
       </ul>
