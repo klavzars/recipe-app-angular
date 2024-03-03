@@ -11,6 +11,7 @@
             class="nav-link"
             routerLinkActive="active"
             [routerLink]="['/recipes']"
+            *ngIf="isAuthenticated"
             >Recipes</a
           >
         </li>
@@ -22,9 +23,27 @@
             >Shopping list</a
           >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/sign-in']"
+            *ngIf="!isAuthenticated"
+            >Authenticate</a
+          >
+        </li>
       </ul>
       <ul class="nav navbar-nav show">
-        <li class="dropdown">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            *ngIf="isAuthenticated"
+            (click)="onLogout()"
+            >Logout</a
+          >
+        </li>
+        <li class="dropdown" *ngIf="isAuthenticated">
           <a class="nav-link dropdown-toggle" href="#">Manage</a>
           <!-- <ul class="dropdown-menu show" appDropdown> -->
           <ul class="dropdown-menu show" appDropdown>
