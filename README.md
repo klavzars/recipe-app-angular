@@ -1,6 +1,6 @@
 # Simple Recipe App 📖
 
-A simple recipe application developed using Angular. It allows users to store their favorite recipes and manage a shopping list. The app was built as a part of learning Angular through [this Udemy course](https://www.udemy.com/course/the-complete-guide-to-angular-2/).
+A simple web recipe application developed using Angular. It allows users to store their favorite recipes and manage a shopping list. The app was built as a part of learning Angular through [this Udemy course](https://www.udemy.com/course/the-complete-guide-to-angular-2/) (still have a few final chapters of the course left, but I'm getting there).
 
 _It ain't much but it's honest work._ 👨‍🌾
 
@@ -8,12 +8,12 @@ _It ain't much but it's honest work._ 👨‍🌾
 
 ---
 
-- Components _(duh)_
+- Components & data binding _(duh)_
 - Directives
 - Services
 - Routing
 - Observables & Subjects
 - Forms (Template-based & Reactive)
-- Http Requests and communication with a simple Firebase backend
+- Http requests and communication with a simple Firebase backend
 - Authentication
 - Route protection

@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col-xs-12 col-md-6 col-md-offset-3">
+<div class="row mt-3">
+  <div class="col-12 col-md-6 offset-md-3">
     <div class="alert alert-danger" *ngIf="error">
       <p>{{ error }}</p>
     </div>
@@ -7,7 +7,7 @@
       <app-loading-spinner></app-loading-spinner>
     </div>
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="email">E-mail</label>
         <input
           id="email"
@@ -19,7 +19,7 @@
           email
         />
       </div>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="password">Password</label>
         <input
           id="password"
@@ -31,16 +31,20 @@
           minlength="6"
         />
       </div>
-      <div>
+      <div class="mt-3">
         <button
-          class="btn btn-primary"
+          class="btn btn-primary me-1"
           type="submit"
           [disabled]="!authForm.valid"
         >
           {{ isLoginMode ? "Sign in" : "Sign up" }}
         </button>
         |
-        <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
+        <button
+          class="btn btn-primary ms-1"
+          (click)="onSwitchMode()"
+          type="button"
+        >
           Switch to {{ isLoginMode ? "Sign Up" : "Sign in" }}
         </button>
       </div>
