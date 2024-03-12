@@ -15,35 +15,17 @@
         type="button"
         class="btn btn-primary dropdown-toggle"
         data-toggle="dropdown"
+        appDropdown
       >
         Manage Recipe <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu show" appDropdown>
-        <li>
-          <a
-            style="cursor: pointer"
-            class="dropdown-item"
-            (click)="onAddToShoppingList()"
-            >To Shopping List</a
-          >
-        </li>
-        <li>
-          <a
-            style="cursor: pointer"
-            class="dropdown-item"
-            (click)="onEditRecipe()"
-            >Edit Recipe</a
-          >
-        </li>
-        <li>
-          <a
-            style="cursor: pointer"
-            class="dropdown-item"
-            (click)="onDeleteRecipe()"
-            >Delete Recipe</a
-          >
-        </li>
-      </ul>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" (click)="onAddToShoppingList()"
+          >To Shopping List</a
+        >
+        <a class="dropdown-item" (click)="onEditRecipe()">Edit Recipe</a>
+        <a class="dropdown-item" (click)="onDeleteRecipe()">Delete Recipe</a>
+      </div>
     </div>
   </div>
 </div>
