@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject, catchError, tap, throwError } from 'rxjs';
 import { User } from './user.model';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 export interface AuthResponseData {
   kind: string;
@@ -18,6 +19,8 @@ export interface AuthResponseData {
   providedIn: 'root',
 })
 export class AuthService {
+  signupUrl: string = environment.signupUrl; // Access API URL from environment
+  signinUrl: string = environment.singinUrl;
   user = new BehaviorSubject<User>(null);
   private tokenExpTimer: any;
 
@@ -25,10 +28,11 @@ export class AuthService {
 
   signup(email: string, password: string) {
     return this.http
-      .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDfxwHJYk0bMyBHG1z6WqGFgb-j6tIocuA',
-        { email, password, returnSecureToken: true }
-      )
+      .post<AuthResponseData>(this.signupUrl, {
+        email,
+        password,
+        returnSecureToken: true,
+      })
       .pipe(
         catchError(this.handleError),
         tap((resData) =>
@@ -57,10 +61,11 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDfxwHJYk0bMyBHG1z6WqGFgb-j6tIocuA',
-        { email, password, returnSecureToken: true }
-      )
+      .post<AuthResponseData>(this.signinUrl, {
+        email,
+        password,
+        returnSecureToken: true,
+      })
       .pipe(
         catchError(this.handleError),
         tap((resData) =>
